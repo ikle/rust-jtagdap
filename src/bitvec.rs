@@ -36,7 +36,7 @@ pub fn bytes_to_bits(bytes: &[u8], mut n: usize) -> Result<Vec<bool>> {
     let mut bits = Vec::with_capacity(n);
     for byte in bytes {
         for i in 0..8 {
-            bits.push((byte >> i) & 1 == 1);
+            bits.push((byte >> i) & 1u8 == 1u8);
             n -= 1;
 
             if n == 0 {
